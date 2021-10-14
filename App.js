@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-// import { NavigationContainer } from "@react-navigation/native";
 
 import {
   StyleSheet,
@@ -10,6 +9,21 @@ import {
   SafeAreaView,
   Pressable,
 } from "react-native";
+
+function categories() {
+  return (
+    <View>
+      <Text>Category screen</Text>
+    </View>
+  );
+}
+// function homeScreen() {
+//   return (
+
+//   );
+// }
+
+// const stack = createStackNavigator();
 
 export default function App() {
   return (
@@ -24,13 +38,22 @@ export default function App() {
 
       <Pressable style={styles.gmailButton}>
         <Image
-          source={require("./assets/images/google.svg")}
+          source={{
+            uri: "https://cdn.icon-icons.com/icons2/836/PNG/512/Google_icon-icons.com_66793.png",
+          }}
           style={{ width: 20, height: 20 }}
         />
         <Text style={styles.gmailtext}>Login with Gmail</Text>
       </Pressable>
 
       <Pressable style={styles.appleButton}>
+        <Image
+          source={{
+            uri: "https://banner2.cleanpng.com/20180614/vvg/kisspng-dell-logo-apple-computer-software-apple-inc-5b2310e30b9ca3.9969922215290247390476.jpg",
+          }}
+          style={{ width: 24, height: 24 }}
+        />
+
         <Text style={styles.text}>Login with apple</Text>
       </Pressable>
 
@@ -74,6 +97,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   appleButton: {
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     padding: 15,
@@ -84,8 +108,10 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
+    paddingLeft: 20,
   },
   gmailtext: {
     color: "black",
+    paddingLeft: 20,
   },
 });
